@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Button } from "../styles/index";
+import { Button, PersonName } from "../styles/index";
 
 const HomePage = () => {
   return (
@@ -20,6 +20,8 @@ const HomePage = () => {
             Design is not just what it looks like and feels like.
             <br />
             Design is how it works.
+            <br />
+            <PersonName>Steve Jobs</PersonName>
           </Sentence>
           <Button color1="#8300e9" color2="#00e2db" content="Get In Touch" />
         </ContainerDown>
@@ -95,7 +97,8 @@ const BottomShape = styled.div`
   width: 100%;
   height: 48rem;
   background: #1e2528;
-  clip-path: polygon(0 0, 100% 44%, 100% 78%, 0 100%);
+  /* clip-path: polygon(0 0, 100% 44%, 100% 78%, 0 100%); */
+  clip-path: polygon(0 0, 100% 44%, 100% 88%, 0 100%);
   z-index: 5;
   display: flex;
   align-items: center;
@@ -126,18 +129,4 @@ const Sentence = styled.p`
     left: -4rem;
     color: white;
   }
-`;
-
-const Btn = styled.button`
-  background-image: linear-gradient(160deg, #8300e9 0%, #00e2db 88%);
-  padding: 1rem 3rem;
-  height: 7rem;
-  width: 20rem;
-  font-size: 1.5rem;
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
-  color: white;
-  font-weight: 800;
-  border-radius: 5px;
-  border: none;
 `;

@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-const Titles = ({ mainTitle, subTitle, mt }) => {
+const Titles = ({ mainTitle, subTitle, color, mt, mb }) => {
   return (
-    <Container mt={mt}>
-      <SubTitle mt={mt}>{subTitle}</SubTitle>
-      <MainTitle>{mainTitle}</MainTitle>
+    <Container mt={mt} mb={mb}>
+      <SubTitle>{subTitle}</SubTitle>
+      <MainTitle color={color}>{mainTitle}</MainTitle>
       <Line />
     </Container>
   );
@@ -17,8 +17,8 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10rem;
-  margin-top: ${({ mt }) => (mt ? `${mt}px` : 0)};
+  margin-top: ${({ mt }) => (mt ? `${mt}rem` : 0)};
+  margin-bottom: ${({ mb }) => (mb ? `${mb}rem` : "10rem")};
 `;
 
 const SubTitle = styled.p`
@@ -28,14 +28,14 @@ const SubTitle = styled.p`
 
 const MainTitle = styled.h1`
   font-size: 4.8rem;
-  color: #4f565b;
+  color: ${({ color }) => color};
   font-weight: 500;
   line-height: 4.8rem;
 `;
 
 const Line = styled.div`
   height: 0.5rem;
-  width: 10%;
+  width: 15rem;
   background-image: linear-gradient(160deg, #8300e9 0%, #00e2db 88%);
   margin-top: 2rem;
   border-radius: 0.4rem;

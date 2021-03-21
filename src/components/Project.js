@@ -1,7 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { Bold } from "../styles/index";
-const Project = ({ name, description, imgName, imgType, technologies }) => {
+const Project = ({
+  name,
+  description,
+  technologies,
+  imgName,
+  imgType,
+  titleLinkTheProject,
+}) => {
   return (
     <Container imgType={imgType}>
       <ProjectImg
@@ -13,10 +20,10 @@ const Project = ({ name, description, imgName, imgType, technologies }) => {
         <Description>{description}</Description>
         <Technologies>
           {technologies.map((tech) => (
-            <Tech>{tech}</Tech>
+            <Tech key={tech}>{tech}</Tech>
           ))}
         </Technologies>
-        <LinkToProject>Let's Play</LinkToProject>
+        <LinkToProject>{titleLinkTheProject}</LinkToProject>
       </SummaryContainer>
     </Container>
   );
@@ -29,7 +36,10 @@ const Container = styled.div`
   align-items: flex-start;
   width: ${({ imgType }) => (imgType === "iphone" ? "53%" : "53%")};
   justify-content: space-between;
-  margin-bottom: 15rem;
+  :not(:last-child) {
+    margin-bottom: 15rem;
+  }
+
   :nth-child(2n + 1) {
     flex-direction: row-reverse;
   }
@@ -38,14 +48,14 @@ const Container = styled.div`
 const ProjectImg = styled.img`
   width: ${({ imgType }) => (imgType === "iphone" ? "30rem" : "45rem")};
   height: ${({ imgType }) => (imgType === "iphone" ? "60rem" : "33rem")};
-  filter: blur(1px) grayscale(70%);
+  /* filter: blur(1px) grayscale(70%);
   -webkit-filter: blur(1px) grayscale(70%);
-  transition: all 0.4s;
+  transition: all 0.4s; */
   cursor: pointer;
-  :hover {
+  /* :hover {
     filter: none;
     -webkit-filter: none;
-  }
+  } */
 `;
 
 const SummaryContainer = styled.div`
@@ -91,6 +101,7 @@ const LinkToProject = styled.p`
   color: rgba(79, 86, 91, 0.25);
   text-transform: uppercase;
   font-weight: 700;
+  transition: all 0.4s;
   cursor: pointer;
   :hover {
     color: #333;

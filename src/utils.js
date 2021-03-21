@@ -9,6 +9,7 @@ export const projects = [
     technologies: ["ReactJS", "styled-components"],
     imgName: "how-fast-are-u",
     imgType: "iphone",
+    titleLinkTheProject: "Let's play",
   },
   {
     name: "Online Store",
@@ -19,6 +20,7 @@ export const projects = [
     technologies: ["ReactJS", "NodeJS"],
     imgName: "online-store",
     imgType: "computer",
+    titleLinkTheProject: "Visit and shop",
   },
   {
     name: "Pokemon - Rock Paper Scissors",
@@ -28,5 +30,19 @@ export const projects = [
     technologies: ["ReactJS", "NodeJS", "Socket.io"],
     imgName: "pokemon",
     imgType: "iphone",
+    titleLinkTheProject: "Let's play",
   },
+];
+
+export const skills = [
+  "HTML(5)",
+  "CSS(3)",
+  "JavaScript",
+  "TypeScript",
+  "ReactJS",
+  "NextJS",
+  "NodeJS",
+  "MongoDB",
+  "MySQL",
+  "Socket.io",
 ];

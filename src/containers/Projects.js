@@ -1,15 +1,25 @@
 import React from "react";
 import styled from "styled-components";
-import Project from "../components/Project";
+import { Project } from "../components/index";
 import { Titles } from "../styles";
 import { projects } from "../utils";
 
 const Projects = () => {
   return (
     <Container>
-      <Titles mainTitle="Recent Projects" subTitle="Portfolio" mt={400} />
+      <Titles mainTitle="Projects" subTitle="Recent" mt={40} color="#4f565b" />
       {projects.map(
-        ({ name, description, technologies, imgName, imgType }, i) => (
+        (
+          {
+            name,
+            description,
+            technologies,
+            imgName,
+            imgType,
+            titleLinkTheProject,
+          },
+          i
+        ) => (
           <Project
             key={i}
             name={name}
@@ -17,6 +27,7 @@ const Projects = () => {
             technologies={technologies}
             imgName={imgName}
             imgType={imgType}
+            titleLinkTheProject={titleLinkTheProject}
           />
         )
       )}
@@ -27,9 +38,17 @@ const Projects = () => {
 export default Projects;
 
 const Container = styled.div`
-  background: #f6f6f6;
-  clip-path: polygon(100% 0, 100% 70%, 0 100%, 0 15%);
+  /* background: #f6f6f6; */
+  /* clip-path: polygon(100% 0, 100% 90%, 0 100%, 0 15%); */
+  clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%);
+  background-image: linear-gradient(
+    166deg,
+    #f6f6f7 86%,
+    #ffffff 53%
+  ) !important;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 `;
