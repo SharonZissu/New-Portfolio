@@ -12,16 +12,30 @@ const Education = () => {
         Online Courses
       </SubTitle>
       <OnlineCoursesContainer>
-        {OnlineCourses.map(({ name, by, hours, imgName }, i) => (
-          <Course key={i} name={name} by={by} hours={hours} imgName={imgName} />
+        {OnlineCourses.map(({ name, by, hours, imgName, link }, i) => (
+          <Course
+            key={i}
+            name={name}
+            by={by}
+            hours={hours}
+            imgName={imgName}
+            link={link}
+          />
         ))}
       </OnlineCoursesContainer>
       <SubTitle mr={1.6} textAlign="right">
         In Progress
       </SubTitle>
       <InProgressCoursesContainer>
-        {inProgressCourses.map(({ name, by, hours, imgName }, i) => (
-          <Course key={i} name={name} by={by} hours={hours} imgName={imgName} />
+        {inProgressCourses.map(({ name, by, hours, imgName, link }, i) => (
+          <Course
+            key={i}
+            name={name}
+            by={by}
+            hours={hours}
+            imgName={imgName}
+            link={link}
+          />
         ))}
       </InProgressCoursesContainer>
       <SubTitle ml={1.6} mb={1} textAlign="left">
@@ -84,8 +98,8 @@ const Container = styled.div`
   justify-content: center;
   background-image: linear-gradient(
     -166deg,
-    #f6f6f7 80%,
-    #ffffff 80%
+    #f6f6f7 88%,
+    #ffffff 88%
   ) !important;
   margin-top: -20rem;
   /* clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%); */
@@ -135,10 +149,14 @@ const Info = styled.div`
 `;
 const Specialization = styled.h3`
   color: #333;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 2.4rem;
   text-align: center;
-  background-image: linear-gradient(160deg, #8300e9 0%, #00e2db 88%);
+  /* background-image: linear-gradient(160deg, #8300e9 0%, #00e2db 88%); */
+  background: #f6f6f7;
+  text-shadow: 4px 4px rgba(51, 51, 51, 0.2);
+  /* border: 1px solid #8300e9;
+  outline: 1px solid #00e2db; */
 `;
 
 const Institution = styled.p`

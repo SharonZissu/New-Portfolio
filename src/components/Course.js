@@ -1,7 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const Course = ({ name, by, hours, imgName }) => {
+const Course = ({ name, by, hours, imgName, link }) => {
+  const openInNewTab = () => {
+    const newWindow = window.open(link, "_blank", "noopener,noreferrer");
+    if (newWindow) newWindow.opener = null;
+  };
   return (
     <Container>
       <ImgContainer>
@@ -10,7 +14,12 @@ const Course = ({ name, by, hours, imgName }) => {
           <By>{by}</By>
           <Name>{name}</Name>
           <Hours>Total Hours: {hours}</Hours>
-          <UdemyImg src={require("../images/udemy-logo.png").default} />
+          <UdemyLink onClick={openInNewTab}>
+            <UdemyImg
+              src={require("../images/udemy-logo.png").default}
+              target="_blank"
+            />
+          </UdemyLink>
         </Description>
       </ImgContainer>
     </Container>
@@ -79,11 +88,15 @@ const Hours = styled.p`
   border-radius: 2rem;
 `;
 
-const UdemyImg = styled.img`
+const UdemyLink = styled.a`
   position: absolute;
   bottom: 0.8rem;
   right: 0.8rem;
   width: 3rem;
   height: 2.4rem;
   cursor: pointer;
+`;
+const UdemyImg = styled.img`
+  height: 100%;
+  width: 100%;
 `;
