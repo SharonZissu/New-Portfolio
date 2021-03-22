@@ -6,6 +6,7 @@ import About from "./containers/About";
 import Projects from "./containers/Projects";
 import Skills from "./containers/Skills";
 import { Menu } from "./components/index";
+import Education from "./containers/Education";
 function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
   useEffect(() => {
@@ -29,6 +30,7 @@ function App() {
       <About />
       <Projects />
       <Skills />
+      <Education />
       <GlobalStyle />
     </>
   );

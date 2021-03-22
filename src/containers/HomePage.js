@@ -97,8 +97,8 @@ const BottomShape = styled.div`
   width: 100%;
   height: 48rem;
   background: #1e2528;
-  /* clip-path: polygon(0 0, 100% 44%, 100% 78%, 0 100%); */
-  clip-path: polygon(0 0, 100% 44%, 100% 88%, 0 100%);
+  clip-path: polygon(0 0, 100% 44%, 100% 78%, 0 100%);
+  /* clip-path: polygon(0 0, 100% 44%, 100% 88%, 0 100%); */
   z-index: 5;
   display: flex;
   align-items: center;

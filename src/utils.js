@@ -40,9 +40,81 @@ export const skills = [
   "JavaScript",
   "TypeScript",
   "ReactJS",
-  "NextJS",
+  "Redux",
   "NodeJS",
   "MongoDB",
   "MySQL",
   "Socket.io",
+];
+
+export const OnlineCourses = [
+  {
+    name: "CSS - The Complete Guide 2021 (incl. Flexbox, Grid & Sass)",
+    by: "Maximilian Schwarzmuller",
+    hours: 22.5,
+    imgName: "css-maximilian",
+  },
+  {
+    name: "Advanced CSS and Sass: Flexbox, Grid, Animations and More!",
+    by: "Jonas Schmedtmann",
+    hours: 28,
+    imgName: "css-jonas",
+  },
+  {
+    name: "JavaScript - The Complete Guide 2021 (Beginner + Advanced)",
+    by: "Maximilian Schwarzmuller",
+    hours: 52.5,
+    imgName: "js-maximilian",
+  },
+  {
+    name: "The Complete JavaScript Course 2021: From Zero To Expert!",
+    by: "Jonas Schmedtmann",
+    hours: 68.5,
+    imgName: "js-jonas",
+  },
+  {
+    name: "React - The Complete Guide (incl Hooks, React Router, Redux)",
+    by: "Maximilian Schwarzmuller",
+    hours: 40.5,
+    imgName: "react-maximilian",
+  },
+  {
+    name: "The Complete Guide to Advanced React Component Patterns",
+    by: "Ohans Emmanuel",
+    hours: 6,
+    imgName: "react-ohans",
+  },
+  {
+    name: "NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)",
+    by: "Maximilian Schwarzmuller",
+    hours: 40.5,
+    imgName: "node-maximilian",
+  },
+  {
+    name: "Socket.IO (with websockets) - the details. (socket io v2)",
+    by: "Robert Bunch",
+    hours: 14,
+    imgName: "socket-robert",
+  },
+  {
+    name: "The Complete 2021 Web Development Bootcamp",
+    by: "Dr. Angela Yu",
+    hours: 54.5,
+    imgName: "web-angela",
+  },
+];
+
+export const inProgressCourses = [
+  {
+    name: "Understanding TypeScript - 2021 Edition",
+    by: "Maximilian Schwarzmuller",
+    hours: 15,
+    imgName: "ts-maximilian",
+  },
+  {
+    name: "Next.js & React - The Complete Guide",
+    by: "Maximilian Schwarzmuller",
+    hours: 25,
+    imgName: "next-maximilian",
+  },
 ];

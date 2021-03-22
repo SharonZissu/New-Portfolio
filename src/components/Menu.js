@@ -6,8 +6,9 @@ const Menu = ({ scrollPosition }) => {
   useEffect(() => {
     console.log("scrollPosition", scrollPosition);
     if (scrollPosition < 1800) setPageName("About");
-    else if (scrollPosition < 4188) setPageName("Projects");
-    else if (scrollPosition < 6188) setPageName("Skills");
+    else if (scrollPosition < 4000) setPageName("Projects");
+    else if (scrollPosition < 4680) setPageName("Skills");
+    else if (scrollPosition < 6680) setPageName("Education");
   }, [scrollPosition]);
   return (
     <Container scrollPosition={scrollPosition}>
