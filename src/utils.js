@@ -12,7 +12,7 @@ export const projects = [
     titleLinkTheProject: "Let's play",
   },
   {
-    name: "Online Store",
+    name: "Responsive Online Store",
     description: `client - React js includes React Hooks, React Router, and Redux.
     server - Node js with Express, MongoDB & Mongoose.
     More elements - Authentication (JWT), Image Upload, Validation, Pagination and Mail notification.
@@ -23,7 +23,7 @@ export const projects = [
     titleLinkTheProject: "Visit and shop",
   },
   {
-    name: "Pokemon - Rock Paper Scissors",
+    name: "Rock Paper Scissors - Pokemon",
     description: `A Game developed for the mobile, client-side with React JS, and server-side with Node JS and Socket.io
     The target of the game is to to reach the opponent's flag and the rules of the fights is exactly like Rock, Paper and Scissors Game.
     You can read more about the game in the website.`,

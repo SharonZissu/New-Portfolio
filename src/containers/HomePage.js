@@ -17,11 +17,13 @@ const HomePage = () => {
       <BottomShape>
         <ContainerDown>
           <Sentence>
-            Design is not just what it looks like and feels like.
+            {/* Design is not just what it looks like and feels like.
             <br />
             Design is how it works.
-            <br />
-            <PersonName>Steve Jobs</PersonName>
+            <br /> */}
+            Failure will never overtake me if <br /> my determination to succeed
+            is strong enough.
+            <PersonName>Og Mandino</PersonName>
           </Sentence>
           <Button color1="#8300e9" color2="#00e2db" content="Get In Touch" />
         </ContainerDown>

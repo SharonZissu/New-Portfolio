@@ -6,8 +6,8 @@ import { Course } from "../components/index";
 
 const Education = () => {
   return (
-    <Container>
-      <Titles mainTitle="Education" subTitle="My" color="#4f565b" mt={20} />
+    <Container id="Education">
+      <Titles mainTitle="Education" subTitle="My" color="#4f565b" mt={45} />
       <SubTitle ml={1.6} textAlign="left">
         Online Courses
       </SubTitle>
@@ -61,7 +61,7 @@ const Education = () => {
           height={28.2}
           src={require("../images/bsc.png").default}
         />
-        <Info mt={13}>
+        <Info mt={16}>
           <Specialization>B.Sc. Computer Science</Specialization>
           <Institution>Holon Institute Of Technology</Institution>
           <GPA>GPA: 88</GPA>
@@ -75,7 +75,7 @@ const Education = () => {
           height={28.2}
           src={require("../images/bagrut.png").default}
         />
-        <Info mt={13}>
+        <Info mt={16}>
           <Specialization>Computer Class</Specialization>
           <Institution>Kugel High School</Institution>
           <GPA>GPA: 110</GPA>
@@ -96,13 +96,19 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
   background-image: linear-gradient(
+    -172deg,
+    #f6f6f7 91%,
+    #ffffff 53%
+  ) !important;
+  /* background-image: linear-gradient(
     -166deg,
     #f6f6f7 88%,
     #ffffff 88%
-  ) !important;
-  margin-top: -20rem;
-  /* clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%); */
+  ) !important; */
+  margin-top: -40em;
+  position: relative;
 `;
 
 const SubTitle = styled.h2`

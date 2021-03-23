@@ -68,7 +68,7 @@ const SummaryContainer = styled.div`
 `;
 const Title = styled.h2`
   color: #333;
-  font-size: 2.3rem;
+  font-size: 2rem;
   font-weight: 600;
   text-transform: uppercase;
   width: 30rem;

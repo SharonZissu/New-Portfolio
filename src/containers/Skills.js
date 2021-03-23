@@ -4,13 +4,13 @@ import { Titles, PersonName } from "../styles";
 import { skills } from "../utils";
 const Skills = () => {
   return (
-    <Container>
+    <Container id="Skills">
       <Titles
         mainTitle="Skills"
-        subTitle="Abilities"
+        subTitle="Abilities and"
         color="white"
         mt={15}
-        mb={6}
+        mb={4}
       />
       <List>
         {skills.map((skill) => (
@@ -29,12 +29,13 @@ const Skills = () => {
 export default Skills;
 const Container = styled.div`
   background: #1e2528;
-  min-height: 100vh;
+  min-height: 110vh;
   clip-path: polygon(100% 0, 100% 100%, 0 80%, 0 20%);
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+  z-index: 5;
 `;
 
 const Sentence = styled.p`
@@ -44,8 +45,8 @@ const Sentence = styled.p`
   position: relative;
   line-height: 3.6rem;
   position: absolute;
-  right: 4rem;
-  bottom: 8rem;
+  right: 22rem;
+  bottom: 11rem;
   ::before {
     position: absolute;
     content: '"';

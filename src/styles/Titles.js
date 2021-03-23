@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-const Titles = ({ mainTitle, subTitle, color, mt, mb }) => {
+const Titles = ({ mainTitle, subTitle, color, mt, mb, noLine, subColor }) => {
   return (
     <Container mt={mt} mb={mb}>
-      <SubTitle>{subTitle}</SubTitle>
+      <SubTitle subColor={subColor}>{subTitle}</SubTitle>
       <MainTitle color={color}>{mainTitle}</MainTitle>
-      <Line />
+      {!noLine && <Line />}
     </Container>
   );
 };
@@ -23,7 +23,9 @@ const Container = styled.div`
 
 const SubTitle = styled.p`
   font-size: 2.4rem;
-  color: rgba(104, 109, 114, 0.17);
+  color: ${({ subColor }) =>
+    subColor ? subColor : "rgba(104, 109, 114, 0.17)"};
+  font-weight: 500;
 `;
 
 const MainTitle = styled.h1`

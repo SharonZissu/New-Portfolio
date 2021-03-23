@@ -6,8 +6,8 @@ import { projects } from "../utils";
 
 const Projects = () => {
   return (
-    <Container>
-      <Titles mainTitle="Projects" subTitle="Recent" mt={40} color="#4f565b" />
+    <Container id="Projects">
+      <Titles mainTitle="Projects" subTitle="Recent" mt={30} color="#4f565b" />
       {projects.map(
         (
           {
@@ -39,7 +39,6 @@ export default Projects;
 
 const Container = styled.div`
   /* background: #f6f6f6; */
-  /* clip-path: polygon(100% 0, 100% 90%, 0 100%, 0 15%); */
   clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%);
   background-image: linear-gradient(
     166deg,
