@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { Titles } from "../styles";
+import { Titles } from "../components/index";
 import { PersonName } from "../styles/index";
+import { media } from "../utils";
+
 import footballImg3 from "../images/football3.png";
 const Career = () => {
   return (
@@ -12,6 +14,7 @@ const Career = () => {
         color="white"
         mt={10}
         mb={3}
+        mtlg={10}
       />
       <Content>
         Playing professional football from a very young age shaped my
@@ -59,6 +62,12 @@ const Container = styled.div`
     ),
     url(${footballImg3}) !important; */
   background-size: cover;
+  @media (max-width: ${media.lg}) {
+    min-height: 90vh;
+  }
+  @media (max-width: ${media.md}) {
+    min-height: 80vh;
+  }
 `;
 
 const Content = styled.p`
@@ -70,6 +79,12 @@ const Content = styled.p`
   padding: 1rem 2rem;
   /* background: rgba(256, 256, 256, 0.02); */
   border-radius: 1rem;
+  @media (max-width: ${media.big}) {
+    width: 45%;
+  }
+  @media (max-width: ${media.md}) {
+    width: 55%;
+  }
 `;
 const IconContainer = styled.div`
   width: 12rem;

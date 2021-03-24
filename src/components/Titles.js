@@ -1,8 +1,18 @@
 import React from "react";
 import styled from "styled-components";
-const Titles = ({ mainTitle, subTitle, color, mt, mb, noLine, subColor }) => {
+import { media } from "../utils";
+const Titles = ({
+  mainTitle,
+  subTitle,
+  color,
+  mt,
+  mb,
+  noLine,
+  subColor,
+  mtlg,
+}) => {
   return (
-    <Container mt={mt} mb={mb}>
+    <Container mt={mt} mb={mb} mtlg={mtlg}>
       <SubTitle subColor={subColor}>{subTitle}</SubTitle>
       <MainTitle color={color}>{mainTitle}</MainTitle>
       {!noLine && <Line />}
@@ -19,6 +29,9 @@ const Container = styled.div`
   justify-content: center;
   margin-top: ${({ mt }) => (mt ? `${mt}rem` : 0)};
   margin-bottom: ${({ mb }) => (mb ? `${mb}rem` : "10rem")};
+  @media (max-width: ${media.lg}) {
+    margin-top: ${({ mtlg }) => (mtlg ? `${mtlg}rem` : 0)};
+  }
 `;
 
 const SubTitle = styled.p`

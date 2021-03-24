@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Button, Titles } from "../styles/index";
-import { Menu } from "../components/index";
-
+import { Button } from "../styles/index";
+import { Menu, Titles } from "../components/index";
+import { media } from "../utils";
 const str = `Name: Sharon Zissu  Age: 27 Location: Holon`;
 const About = () => {
   return (
@@ -12,14 +12,9 @@ const About = () => {
         subTitle="A Few Words"
         color="#4f565b"
         mb={14}
+        mtlg={20}
       />
       <Info>
-        {/* <Content>
-          Highly motivated to succeed and wishing to enter the Hi-Tech industry.
-          With a Bachelor's degree in compuer science. Intuitive, deductive and
-          self-taught with attention to details and accuracy. Excellent
-          communication skills and interpersonal relations.
-        </Content> */}
         <Button
           content="Download CV"
           color1="#8300e9"
@@ -59,6 +54,9 @@ export default About;
 const Container = styled.div`
   min-height: 100vh;
   position: relative;
+  @media (max-width: ${media.md}) {
+    min-height: 80vh;
+  }
 `;
 
 const Info = styled.div`
@@ -80,7 +78,7 @@ const ImgContainer = styled.div`
   :before {
     height: auto;
     width: 100%;
-    content: "Highly motivated to succeed and wishing to enter the Hi-Tech industry. With a Bachelor's degree in compuer science. Intuitive, deductive and self-taught with attention to details and accuracy. Excellentcommunication skills and interpersonal relations.";
+    content: "Highly motivated to succeed and wishing to enter the Hi-Tech industry. With a Bachelor's degree in compuer science. Intuitive, deductive and self-taught with attention to details and accuracy. Excellent communication skills and interpersonal relations.";
     position: absolute;
     left: -95%;
     top: -5rem;
@@ -93,6 +91,9 @@ const ImgContainer = styled.div`
     font-weight: 300;
     padding: 1rem;
     /* z-index: -1; */
+  }
+  @media (max-width: ${media.md_b}) {
+    margin-right: -20rem;
   }
 `;
 const Img = styled.img`

@@ -1,89 +1,110 @@
 import React from "react";
 import styled from "styled-components";
-import { Titles } from "../styles";
-import { inProgressCourses, OnlineCourses } from "../utils";
-import { Course } from "../components/index";
+import { Course, Titles } from "../components/index";
+import { inProgressCourses, onlineCourses } from "../utils";
+
+const OnlineCourses = () => (
+  <>
+    <SubTitle ml={1.6} textAlign="left">
+      Online Courses
+    </SubTitle>
+    <OnlineCoursesContainer>
+      {onlineCourses.map(({ name, by, hours, imgName, link }, i) => (
+        <Course
+          key={i}
+          name={name}
+          by={by}
+          hours={hours}
+          imgName={imgName}
+          link={link}
+        />
+      ))}
+    </OnlineCoursesContainer>
+  </>
+);
+
+const InProgressCourses = () => (
+  <>
+    <SubTitle mr={1.6} textAlign="right">
+      In Progress
+    </SubTitle>
+    <InProgressCoursesContainer>
+      {inProgressCourses.map(({ name, by, hours, imgName, link }, i) => (
+        <Course
+          key={i}
+          name={name}
+          by={by}
+          hours={hours}
+          imgName={imgName}
+          link={link}
+        />
+      ))}
+    </InProgressCoursesContainer>
+  </>
+);
+
+const Certificates = () => (
+  <>
+    <SubTitle ml={1.6} mb={1} textAlign="left">
+      Certificates
+    </SubTitle>
+    <Certificate>
+      <CertificateImg
+        height={14.3}
+        src={require("../images/sqlink-graduate.png").default}
+      />
+      <Info>
+        <SQLinkImgContainer>
+          <SQLinkImg src={require("../images/sqlink-logo.png").default} />
+        </SQLinkImgContainer>
+        <Specialization>React & Redux</Specialization>
+        <Institution>40 Hours</Institution>
+      </Info>
+    </Certificate>
+    <Certificate>
+      <CertificateImg
+        height={28.2}
+        src={require("../images/bsc.png").default}
+      />
+      <Info mt={16}>
+        <Specialization>B.Sc. Computer Science</Specialization>
+        <Institution>Holon Institute Of Technology</Institution>
+        <GPA>GPA: 88</GPA>
+      </Info>
+      <GraduateImgContainer>
+        <GraduateImg src={require("../images/graduate.png").default} />
+      </GraduateImgContainer>
+    </Certificate>
+    <Certificate>
+      <CertificateImg
+        height={28.2}
+        src={require("../images/bagrut.png").default}
+      />
+      <Info mt={16}>
+        <Specialization>Computer Class</Specialization>
+        <Institution>Kugel High School</Institution>
+        <GPA>GPA: 110</GPA>
+      </Info>
+      <StudentImgContainer year1="2008" year2="2011">
+        <StudentImg src={require("../images/student.png").default} />
+      </StudentImgContainer>
+    </Certificate>
+  </>
+);
 
 const Education = () => {
   return (
     <Container id="Education">
-      <Titles mainTitle="Education" subTitle="My" color="#4f565b" mt={45} />
-      <SubTitle ml={1.6} textAlign="left">
-        Online Courses
-      </SubTitle>
-      <OnlineCoursesContainer>
-        {OnlineCourses.map(({ name, by, hours, imgName, link }, i) => (
-          <Course
-            key={i}
-            name={name}
-            by={by}
-            hours={hours}
-            imgName={imgName}
-            link={link}
-          />
-        ))}
-      </OnlineCoursesContainer>
-      <SubTitle mr={1.6} textAlign="right">
-        In Progress
-      </SubTitle>
-      <InProgressCoursesContainer>
-        {inProgressCourses.map(({ name, by, hours, imgName, link }, i) => (
-          <Course
-            key={i}
-            name={name}
-            by={by}
-            hours={hours}
-            imgName={imgName}
-            link={link}
-          />
-        ))}
-      </InProgressCoursesContainer>
-      <SubTitle ml={1.6} mb={1} textAlign="left">
-        Certificates
-      </SubTitle>
-      <Certificate>
-        <CertificateImg
-          height={14.3}
-          src={require("../images/sqlink-graduate.png").default}
-        />
-        <Info>
-          <SQLinkImgContainer>
-            <SQLinkImg src={require("../images/sqlink-logo.png").default} />
-          </SQLinkImgContainer>
-
-          <Specialization>React & Redux</Specialization>
-          <Institution>40 Hours</Institution>
-          {/* <GPA>GPA: 88</GPA> */}
-        </Info>
-      </Certificate>
-      <Certificate>
-        <CertificateImg
-          height={28.2}
-          src={require("../images/bsc.png").default}
-        />
-        <Info mt={16}>
-          <Specialization>B.Sc. Computer Science</Specialization>
-          <Institution>Holon Institute Of Technology</Institution>
-          <GPA>GPA: 88</GPA>
-        </Info>
-        <GraduateImgContainer>
-          <GraduateImg src={require("../images/graduate.png").default} />
-        </GraduateImgContainer>
-      </Certificate>
-      <Certificate>
-        <CertificateImg
-          height={28.2}
-          src={require("../images/bagrut.png").default}
-        />
-        <Info mt={16}>
-          <Specialization>Computer Class</Specialization>
-          <Institution>Kugel High School</Institution>
-          <GPA>GPA: 110</GPA>
-        </Info>
-        <StudentImgContainer year1="2008" year2="2011">
-          <StudentImg src={require("../images/student.png").default} />
-        </StudentImgContainer>
-      </Certificate>
+      <Titles
+        mainTitle="Education"
+        subTitle="My"
+        color="#4f565b"
+        mt={45}
+        mtlg={40}
+      />
+      <OnlineCourses />
+      <InProgressCourses />
+      <Certificates />
     </Container>
   );
 };

@@ -1,13 +1,18 @@
 import React from "react";
 import styled from "styled-components";
-import { Project } from "../components/index";
-import { Titles } from "../styles";
+import { Project, Titles } from "../components/index";
 import { projects } from "../utils";
 
 const Projects = () => {
   return (
     <Container id="Projects">
-      <Titles mainTitle="Projects" subTitle="Recent" mt={30} color="#4f565b" />
+      <Titles
+        mainTitle="Projects"
+        subTitle="Recent"
+        mt={30}
+        color="#4f565b"
+        mtlg={30}
+      />
       {projects.map(
         (
           {

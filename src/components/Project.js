@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Bold } from "../styles/index";
+
 const Project = ({
   name,
   description,
@@ -34,12 +35,11 @@ export default Project;
 const Container = styled.div`
   display: flex;
   align-items: flex-start;
-  width: ${({ imgType }) => (imgType === "iphone" ? "53%" : "53%")};
-  justify-content: space-between;
+  width: 53%;
+  justify-content: center;
   :not(:last-child) {
     margin-bottom: 15rem;
   }
-
   :nth-child(2n + 1) {
     flex-direction: row-reverse;
   }
@@ -64,7 +64,8 @@ const SummaryContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: auto;
-  margin-right: ${({ imgType }) => (imgType === "iphone" ? "15rem" : "0")};
+  margin-right: ${({ imgType }) => (imgType === "iphone" ? "0" : "2rem")};
+  margin-left: ${({ imgType }) => (imgType === "iphone" ? "2rem" : "0")};
 `;
 const Title = styled.h2`
   color: #333;

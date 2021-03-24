@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { media } from "../utils";
 export const GlobalStyle = createGlobalStyle`
 * {
   margin: 0;
@@ -13,6 +14,15 @@ export const GlobalStyle = createGlobalStyle`
 html {
   box-sizing: border-box;
   font-size: 62.5%; //1rem = 10px
+  @media (max-width: ${media.big}) {
+    font-size: 55%;
+  }
+  @media (max-width: ${media.lg}) {
+    font-size: 50%;
+  }
+  @media (max-width: ${media.md}) {
+    font-size: 45%;
+  }
 }
 
 body {

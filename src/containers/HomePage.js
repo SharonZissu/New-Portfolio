@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Button, PersonName } from "../styles/index";
+import { media } from "../utils";
 
 const HomePage = () => {
   return (
@@ -50,6 +51,11 @@ const TopTriangle = styled.div`
   height: 63%;
   background: #f6f6f6;
   clip-path: polygon(0 0, 100% 0, 100% 100%);
+  @media (max-width: ${media.lg}) {
+    width: 100%;
+
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 40%);
+  }
 `;
 
 const InfoContainer = styled.div`
@@ -57,6 +63,16 @@ const InfoContainer = styled.div`
   flex-direction: column;
   margin-left: 20rem;
   margin-top: 15rem;
+  position: relative;
+  z-index: 20;
+  @media (max-width: ${media.big}) {
+    margin-left: 10rem;
+    margin-top: 12rem;
+  }
+  @media (max-width: ${media.lg}) {
+    margin-left: 10rem;
+    margin-top: 5rem;
+  }
 `;
 
 const SubTitle = styled.p`
@@ -87,10 +103,27 @@ const PositionTitle = styled.h2`
 
 const ProfileImg = styled.img`
   position: absolute;
-  width: 65rem;
-  height: 80rem;
-  top: -3.2rem;
+
+  /* width: 32%; */
+  width: 60rem;
+  height: 75rem;
+  /* height: 40.544%; */
+  /* top: 0.4rem; */
+  top: 1%;
   right: 8rem;
+  @media (max-width: ${media.big}) {
+    /* top: 11rem; */
+    top: 12%;
+  }
+  @media (max-width: ${media.lg}) {
+    top: 20%;
+    right: 20%;
+  }
+  @media (max-width: ${media.md}) {
+    top: 24%;
+    width: 65rem;
+    height: 80rem;
+  }
 `;
 
 const BottomShape = styled.div`
@@ -105,6 +138,10 @@ const BottomShape = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: ${media.lg}) {
+    clip-path: polygon(0 0, 100% 20%, 100% 78%, 0 100%);
+    bottom: -19rem;
+  }
 `;
 
 const ContainerDown = styled.div`

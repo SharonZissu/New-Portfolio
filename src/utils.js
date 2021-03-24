@@ -1,4 +1,10 @@
-import { Bold } from "./styles/index";
+export const media = {
+  big: "1350px",
+  lg: "1100px",
+  md: "941px",
+  md_b: "841px",
+};
+
 export const projects = [
   {
     name: "How Fast Are you",
@@ -38,16 +44,17 @@ export const skills = [
   "HTML(5)",
   "CSS(3)",
   "JavaScript",
-  "TypeScript",
+  ,
   "ReactJS",
   "Redux",
   "NodeJS",
   "MongoDB",
   "MySQL",
   "Socket.io",
+  "C++",
 ];
 
-export const OnlineCourses = [
+export const onlineCourses = [
   {
     name: "CSS - The Complete Guide 2021 (incl. Flexbox, Grid & Sass)",
     by: "Maximilian Schwarzmuller",
@@ -132,3 +139,9 @@ export const inProgressCourses = [
     link: "https://www.udemy.com/course/nextjs-react-the-complete-guide/",
   },
 ];
+
+export const contactLinks = {
+  facebook: "https://www.facebook.com/sharon.zissu/",
+  linkedin: "https://www.linkedin.com/in/sharon-zissu-9b9812187/",
+  github: "https://github.com/SharonZissu",
+};

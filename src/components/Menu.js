@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-
+import { media } from "../utils";
 const Menu = ({ scrollPosition }) => {
   const [pageName, setPageName] = useState("");
   useEffect(() => {
     console.log("scrollPosition", scrollPosition);
     let checkPage = "";
-    if (scrollPosition < 1658) checkPage = "About";
-    else if (scrollPosition < 4124) checkPage = "Projects";
-    else if (scrollPosition < 4479) checkPage = "Skills";
-    else if (scrollPosition < 6679) checkPage = "Education";
-    else if (scrollPosition < 7123) checkPage = "Career";
-    else if (scrollPosition > 7650) checkPage = "Contact";
+    if (scrollPosition >= 7480) checkPage = "Contact";
+    else if (scrollPosition >= 6850) checkPage = "Career";
+    else if (scrollPosition >= 4450) checkPage = "Education";
+    else if (scrollPosition >= 3912) checkPage = "Skills";
+    else if (scrollPosition > 1658) checkPage = "Projects";
+    else if (scrollPosition < 1658) checkPage = "About";
     setPageName(checkPage);
   }, [scrollPosition]);
 
@@ -66,11 +66,20 @@ export default Menu;
 const Container = styled.div`
   position: ${({ scrollPosition }) =>
     scrollPosition > 830 ? "fixed" : "absolute"};
-  top: ${({ scrollPosition }) => (scrollPosition > 830 ? "6rem" : "120%")};
+  top: ${({ scrollPosition }) => (scrollPosition > 830 ? "7rem" : "120%")};
   right: 3rem;
   display: flex;
   justify-content: flex-end;
   z-index: 500;
+
+  @media (max-width: ${media.lg}) {
+    position: ${({ scrollPosition }) =>
+      scrollPosition > 962 ? "fixed" : "absolute"};
+    top: ${({ scrollPosition }) => (scrollPosition > 962 ? "7rem" : "135%")};
+  }
+  @media (max-width: ${media.md_b}) {
+    display: none;
+  }
 `;
 
 const List = styled.ul`
@@ -91,9 +100,13 @@ const Item = styled.li`
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: ${({ changeBG }) => !changeBG && "rgba(51,51,51,0.8)"};
+  background-image: ${({ changeBG }) =>
+    changeBG && `linear-gradient(160deg, #8300e9 0%, #00e2db 88%)`};
   a {
     text-decoration: none;
     color: white;
+    cursor: pointer;
   }
   :first-child {
     border-top-left-radius: 5px;
@@ -103,11 +116,9 @@ const Item = styled.li`
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
   }
-
-  cursor: pointer;
-  background-color: ${({ changeBG }) => !changeBG && "rgba(51,51,51,0.8)"};
-  background-image: ${({ changeBG }) =>
-    changeBG && `linear-gradient(160deg, #8300e9 0%, #00e2db 88%)`};
+  @media (max-width: ${media.md}) {
+    padding: 3rem 1rem;
+  }
 `;
 
 const TopImg = styled.img`

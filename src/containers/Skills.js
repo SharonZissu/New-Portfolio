@@ -1,7 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Titles, PersonName } from "../styles";
+import { PersonName } from "../styles/index";
+import { Titles } from "../components/index";
 import { skills } from "../utils";
+import { media } from "../utils";
+
 const Skills = () => {
   return (
     <Container id="Skills">
@@ -9,8 +12,9 @@ const Skills = () => {
         mainTitle="Skills"
         subTitle="Abilities and"
         color="white"
-        mt={15}
+        mt={13}
         mb={4}
+        mtlg={16}
       />
       <List>
         {skills.map((skill) => (
@@ -36,6 +40,15 @@ const Container = styled.div`
   align-items: center;
   position: relative;
   z-index: 5;
+  @media (max-width: ${media.big}) {
+    min-height: 100vh;
+  }
+  @media (max-width: ${media.big}) {
+    min-height: 85vh;
+  }
+  @media (max-width: ${media.md}) {
+    min-height: 75vh;
+  }
 `;
 
 const Sentence = styled.p`
@@ -56,6 +69,9 @@ const Sentence = styled.p`
     top: 4rem;
     left: -4rem;
     color: white;
+  }
+  @media (max-width: ${media.md}) {
+    bottom: 13rem;
   }
 `;
 
